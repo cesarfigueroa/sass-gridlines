@@ -1,3 +1,5 @@
+$gl-vendor-prefix: 'webkit';
+
 // Colors
 
 $gl-color-light-pink: #FDD1D2;
@@ -44,17 +46,17 @@ $gl-color-red: #BB0000;
 
   &:before {
     @if $width-gutter == 0px {
-      background-image: -webkit-linear-gradient(left, $gl-color-pink 50%, $gl-color-light-pink 50%);
+      background-image: -#{$gl-vendor-prefix}-linear-gradient(left, $gl-color-pink 50%, $gl-color-light-pink 50%);
       background-size: ($width-total * 2);
     } @else {
-      background-image: -webkit-linear-gradient(left, $gl-color-pink $percentage-padding, $gl-color-light-pink $percentage-padding, $gl-color-light-pink $percentage-inner-column, $gl-color-pink $percentage-inner-column, $gl-color-pink $percentage-column, transparent $percentage-column);
+      background-image: -#{$gl-vendor-prefix}-linear-gradient(left, $gl-color-pink $percentage-padding, $gl-color-light-pink $percentage-padding, $gl-color-light-pink $percentage-inner-column, $gl-color-pink $percentage-inner-column, $gl-color-pink $percentage-column, transparent $percentage-column);
       background-size: $width-total;
     }
   }
 
   @if $line-height > 2px {
     &:after {
-      background-image: -webkit-linear-gradient(bottom, $gl-color-red percentage(1px / $line-height), transparent percentage(1px / $line-height));
+      background-image: -#{$gl-vendor-prefix}-linear-gradient(bottom, $gl-color-red percentage(1px / $line-height), transparent percentage(1px / $line-height));
       background-size: $line-height $line-height;
     }
   }
