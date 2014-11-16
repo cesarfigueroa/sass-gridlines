@@ -4,7 +4,7 @@ $gl-color-light-pink: #FDD1D2;
 $gl-color-pink: #F87A7D;
 $gl-color-red: #BB0000;
 
-@mixin gridlines($width-column, $width-gutter, $width-padding: 0px, $line-height: 0px) {
+@mixin gridlines($width-column, $width-gutter: 0px, $width-padding: 0px, $line-height: 0px) {
   @each $measure in ($width-column, $width-gutter, $width-padding, $line-height) {
     @if unit($measure) != 'px' {
       @error 'All arguments need to be pixel values.';
