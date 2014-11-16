@@ -4,10 +4,18 @@
   "main": "_gridlines.scss",
   "license": "MIT",
   "ignore": ".gitignore",
-  "keywords": ["sass", "grid", "background"],
-  "author": "Cesar Figueroa",
+  "keywords": [
+    "sass",
+    "grid",
+    "background"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/cesarfigueroa/sass-gridlines.git"
-  }
+  },
+  "version": "0.0.1",
+  "homepage": "https://github.com/cesarfigueroa/sass-gridlines",
+  "authors": [
+    "Cesar Figueroa"
+  ]
 }
