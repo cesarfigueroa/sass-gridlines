@@ -1,0 +1,13 @@
+{
+  "name": "sass-gridlines",
+  "description": "A Sass mixin that generates grid backgrounds with ease.",
+  "main": "_gridlines.scss",
+  "license": "MIT",
+  "ignore": ".gitignore",
+  "keywords": ["sass", "grid", "background"],
+  "author": "Cesar Figueroa",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cesarfigueroa/sass-gridlines.git"
+  }
+}
