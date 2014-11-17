@@ -1,0 +1,9 @@
+{
+  "name": "sass-gridlines",
+  "description": "A Sass mixin that generates grid backgrounds with ease.",
+  "tags": [
+    "sass",
+    "grid",
+    "background"
+  ]
+}
