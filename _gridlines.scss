@@ -6,16 +6,20 @@ $gl-color-light-pink: #FDD1D2;
 $gl-color-pink: #F87A7D;
 $gl-color-red: #BB0000;
 
-@mixin gridlines($width-column, $width-gutter: 0px, $width-padding: 0px, $line-height: 0px) {
+@mixin gridlines($width-column: 0px, $width-gutter: 0px, $width-padding: 0px, $line-height: 0px) {
   @each $measure in ($width-column, $width-gutter, $width-padding, $line-height) {
     @if unit($measure) != 'px' {
       @error 'All arguments need to be pixel values.';
     }
   }
 
+  @if ($width-column + $width-gutter + $width-padding + $line-height) == 0px {
+    @error 'You need to pass at least one of $width-column or $line-height in order to see a result.';
+  }
+
   // Warnings
 
-  @if $width-padding >= ($width-column / 2) {
+  @if $width-padding > 0px and $width-padding >= ($width-column / 2) {
     @warn "The column padding shouldn't be greater than half the width of the column.";
   }
 
@@ -44,13 +48,15 @@ $gl-color-red: #BB0000;
     z-index: -1;
   }
 
-  &:before {
-    @if $width-gutter == 0px {
-      background-image: -#{$gl-vendor-prefix}-linear-gradient(left, $gl-color-pink 50%, $gl-color-light-pink 50%);
-      background-size: ($width-total * 2);
-    } @else {
-      background-image: -#{$gl-vendor-prefix}-linear-gradient(left, $gl-color-pink $percentage-padding, $gl-color-light-pink $percentage-padding, $gl-color-light-pink $percentage-inner-column, $gl-color-pink $percentage-inner-column, $gl-color-pink $percentage-column, transparent $percentage-column);
-      background-size: $width-total;
+  @if $width-column > 0px {
+    &:before {
+      @if $width-gutter == 0px {
+        background-image: -#{$gl-vendor-prefix}-linear-gradient(left, $gl-color-pink 50%, $gl-color-light-pink 50%);
+        background-size: ($width-total * 2);
+      } @else {
+        background-image: -#{$gl-vendor-prefix}-linear-gradient(left, $gl-color-pink $percentage-padding, $gl-color-light-pink $percentage-padding, $gl-color-light-pink $percentage-inner-column, $gl-color-pink $percentage-inner-column, $gl-color-pink $percentage-column, transparent $percentage-column);
+        background-size: $width-total;
+      }
     }
   }
 
