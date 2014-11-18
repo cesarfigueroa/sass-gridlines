@@ -3,6 +3,11 @@
   "description": "A Sass mixin that generates grid backgrounds with ease.",
   "main": "_gridlines.scss",
   "license": "MIT",
+  "ignore": [
+    "LICENSE",
+    "bower.json",
+    "sache.json"
+  ],
   "keywords": [
     "sass",
     "grid",
