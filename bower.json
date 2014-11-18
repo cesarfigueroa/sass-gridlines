@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git://github.com/cesarfigueroa/sass-gridlines.git"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/cesarfigueroa/sass-gridlines",
   "authors": [
     "Cesar Figueroa"
