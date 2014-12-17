@@ -4,13 +4,15 @@ Gridlines is a Sass mixin that generates image-less grid backgrounds with ease. 
 
 ![940px](grid.png)
 
+## Installation
+
+Install with Bower (`bower install sass-gridlines`) or manually download the [_gridlines.scss](_gridlines.scss) file to your project’s directory.
+
 ## Usage
 
-1. Install with Bower (`bower install sass-gridlines`) or manually download [_gridlines.scss](_gridlines.scss) to your project’s directory.
+1. Import the Sass partial.
 
-2. Import the Sass partial.
-
-3. Configure the mixin.
+2. Configure the mixin.
 
   ```scss
   body {
@@ -18,7 +20,7 @@ Gridlines is a Sass mixin that generates image-less grid backgrounds with ease. 
   }
   ```
 
-4. Save countless hours!
+3. Save countless hours!
 
 ### Arguments
 
