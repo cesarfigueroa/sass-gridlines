@@ -4,8 +4,8 @@
   "main": "_gridlines.scss",
   "license": "MIT",
   "ignore": [
-    "LICENSE",
-    "bower.json",
+    "README.md",
+    "LICENSE.txt",
     "sache.json"
   ],
   "keywords": [
