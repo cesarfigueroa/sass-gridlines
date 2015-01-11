@@ -6,6 +6,14 @@ $gl-color-light-pink: #FDD1D2;
 $gl-color-pink: #F87A7D;
 $gl-color-red: #BB0000;
 
+@function _linear-gradient($values...) {
+  @if $gl-vendor-prefix {
+    @return call('-#{$gl-vendor-prefix}-linear-gradient', $values);
+  } @else {
+    @return linear-gradient($values);
+  }
+}
+
 @mixin gridlines($width-column: 0px, $width-gutter: 0px, $width-padding: 0px, $line-height: 0px) {
   @each $measure in ($width-column, $width-gutter, $width-padding, $line-height) {
     @if unit($measure) != 'px' {
@@ -51,10 +59,10 @@ $gl-color-red: #BB0000;
   @if $width-column > 0px {
     &:before {
       @if $width-gutter == 0px {
-        background-image: -#{$gl-vendor-prefix}-linear-gradient(left, $gl-color-pink 50%, $gl-color-light-pink 50%);
+        background-image: _linear-gradient(left, $gl-color-pink 50%, $gl-color-light-pink 50%);
         background-size: ($width-total * 2);
       } @else {
-        background-image: -#{$gl-vendor-prefix}-linear-gradient(left, $gl-color-pink $percentage-padding, $gl-color-light-pink $percentage-padding, $gl-color-light-pink $percentage-inner-column, $gl-color-pink $percentage-inner-column, $gl-color-pink $percentage-column, transparent $percentage-column);
+        background-image: _linear-gradient(left, $gl-color-pink $percentage-padding, $gl-color-light-pink $percentage-padding, $gl-color-light-pink $percentage-inner-column, $gl-color-pink $percentage-inner-column, $gl-color-pink $percentage-column, transparent $percentage-column);
         background-size: $width-total;
       }
     }
@@ -62,7 +70,7 @@ $gl-color-red: #BB0000;
 
   @if $line-height > 2px {
     &:after {
-      background-image: -#{$gl-vendor-prefix}-linear-gradient(bottom, $gl-color-red percentage(1px / $line-height), transparent percentage(1px / $line-height));
+      background-image: _linear-gradient(bottom, $gl-color-red percentage(1px / $line-height), transparent percentage(1px / $line-height));
       background-size: $line-height $line-height;
     }
   }
