@@ -33,4 +33,4 @@ The `gridlines` mixin takes four arguments. They are all optional—although, ei
 
 ### Variables
 
-1. `$gl-vendor-prefix`: Sets the vendor prefix on linear-gradients. By default, this is "webkit".
+1. `$gl-vendor-prefix`: Sets the vendor prefix on linear-gradients. By default, this is `webkit`.
