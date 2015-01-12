@@ -8,9 +8,9 @@ $gl-color-red: #BB0000;
 
 @function gl-linear-gradient($values...) {
   @if $gl-vendor-prefix {
-    @return call('-#{$gl-vendor-prefix}-linear-gradient', $values);
+    @return unquote("-#{$gl-vendor-prefix}-linear-gradient(#{$values})");
   } @else {
-    @return linear-gradient($values);
+    @return unquote("linear-gradient(#{$values})");
   }
 }
 
